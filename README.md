@@ -92,8 +92,7 @@ The data used (`data_for_streamlit.csv`) includes:
 ## 🙋‍♂️ Author
 
 **Dhanush Devadiga**  
-Student ID: 24238836  
-Master’s in UXD, University College Dublin
+ University College Dublin
 
 ## 📄 License
 
