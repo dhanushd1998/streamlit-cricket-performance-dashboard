@@ -1,0 +1,7 @@
+[theme]
+primaryColor = "#3488BD"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#B8B8C3"
+[layout]
+wide = true
