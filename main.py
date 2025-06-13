@@ -14,17 +14,16 @@ st.set_page_config(
 
 # Load the data
 df = pd.read_csv("data_for_streamlit.csv")
-
+st.sidebar.image("cricket-logo.png", use_container_width= True)
 # Sidebar navigation
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Dashboard","Score Predictor","Interactive Data Table", "About" ])
-for _ in range(20):
+for _ in range(18):
     st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
 # Footer content
 st.sidebar.markdown("---")
 st.sidebar.markdown("Dhanush Devadiga")
-st.sidebar.markdown("24238836")
 if page == "About":
     st.title("About")
     col1, col2 = st.columns(2)
@@ -191,7 +190,33 @@ elif page == "Interactive Data Table":
 
 
 else:
-    st.title("Cricket Performance Dashboard")
+# Inject sticky header
+    st.markdown("""
+        <style>
+        .sticky-title {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 98%;
+            background-color: #0E1117;
+            z-index: 99999;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: white;
+            border-bottom: 2px solid #3488BD;
+        }
+
+        /* Push the main app content down */
+        .main {
+            margin-top: 99px;
+        }
+        </style>
+        <div class="sticky-title"> Player Analytics Dashboard</div>
+    """, unsafe_allow_html=True)
+
+
 
     # Tabs: Add "Overall" tab first, followed by match types
     match_types = df["Match Type"].unique().tolist()
@@ -427,3 +452,26 @@ else:
                 st.markdown("### Trend Analysis")
                 st.markdown(trend_msg, unsafe_allow_html=True)
                 st.plotly_chart(fig, use_container_width=True, key=f"row3_runs_chart_{match_type}")
+custom_css = """
+<style>
+.st-emotion-cache-kgpedg {
+    display: flex;
+    justify-content: space-around !important;
+    align-items: center !important;
+    padding: 0;
+}
+.st-emotion-cache-luriig {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 0.75rem;
+    background: rgb(14, 17, 23);
+    outline: none;
+    z-index: 999990;
+    display: block;
+}
+</style>
+"""
+
+st.markdown(custom_css, unsafe_allow_html=True)
