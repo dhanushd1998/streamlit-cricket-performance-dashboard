@@ -2,10 +2,7 @@
 
 A visually engaging and interactive Streamlit web app that provides deep insights into the cricket career of **Virat Kohli**. Explore match statistics, filter data, and predict scores based on historical patterns — all in one place.
 
-![Dashboard Screenshot]
-Screenshot
-
-
+![Demo GIF](media/dashboard-video.gif)
 ## 📁 Project Structure
 
 ```

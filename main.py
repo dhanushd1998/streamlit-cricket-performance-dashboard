@@ -6,15 +6,14 @@ import time
 
 st.set_page_config(
     page_title="Player Analytics",
-    page_icon="favicon.png",
+    page_icon="media/favicon.png",
     layout="wide",
     initial_sidebar_state="auto",
     menu_items=None
 )
-
 # Load the data
 df = pd.read_csv("data_for_streamlit.csv")
-st.sidebar.image("cricket-logo.png", use_container_width= True)
+st.sidebar.image("media/cricket-logo.png", use_container_width= True)
 # Sidebar navigation
 st.sidebar.title("Navigation")
 page = st.sidebar.radio("Go to", ["Dashboard","Score Predictor","Interactive Data Table", "About" ])
@@ -28,7 +27,7 @@ if page == "About":
     st.title("About")
     col1, col2 = st.columns(2)
     with col1:
-        st.image("virat-kohli.png", caption="Virat Kohli - Indian Cricketer", use_container_width=True)
+        st.image("media/virat-kohli.png", caption="Virat Kohli - Indian Cricketer", use_container_width=True)
 
     with col2:
         st.write("## Virat Kohli")
